@@ -37,6 +37,9 @@ class Switchboard:
         """
         return self.phones
 
+    def get_phone_numbers(self):
+        return [p.get_number() for p in self.phones ]
+
     def add_phone(self, phone_number):
         """
         This function should add a local phone connection by creating a phone object
