@@ -15,14 +15,14 @@ class Phone:
         """
         self.number = number
         self.switchboard = switchboard
-        self.state = "NOT_IN_USE"
+        self.connection = ()
         # you will need more parameters/attributes
 
     def get_number(self):
         return self.number
     
     def is_connected(self):
-        return self.state == "IN_USE"
+        return len(self.connection)
 
 
     def connect(self, area_code, other_phone_number):
@@ -31,7 +31,7 @@ class Phone:
         :param other_phone_number: the other phone number without the area code
         :return: **this you must decide in your implementation**
         """
-        self.state = "IN_USE"
+        self.connection = (area_code, other_phone_number)
 
     def disconnect(self):
         """
@@ -42,5 +42,5 @@ class Phone:
         You should also make sure to disconnect the other phone on the other end of the line.
         :return: **depends on your implementation**
         """
-        self.state = "IN_USE"
+        self.connection = ()
 
